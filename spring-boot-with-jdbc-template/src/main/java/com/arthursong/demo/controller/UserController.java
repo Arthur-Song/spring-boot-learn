@@ -2,6 +2,7 @@ package com.arthursong.demo.controller;
 
 import com.arthursong.demo.dao.UserDao;
 import com.arthursong.demo.entity.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2018/7/3.
  */
+@Slf4j
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -27,7 +29,7 @@ public class UserController {
         try {
             userList=userDao.getUserList();
         }catch (Exception e){
-            System.out.println("异常信息:  "+e.getMessage());
+            log.error("异常信息:  "+e.getMessage());
         }
         return userList;
     }
@@ -44,7 +46,7 @@ public class UserController {
             user=userDao.getUserById(id);
         }catch (Exception e){
             user=new User();
-            System.out.println("异常信息： "+e.getMessage());
+            log.error("异常信息： "+e.getMessage());
         }
         return user;
     }
@@ -60,7 +62,7 @@ public class UserController {
         try {
             res=userDao.saveUser(user);
         }catch (Exception e){
-            System.out.println("异常信息： "+e.getMessage());
+            log.error("异常信息： "+e.getMessage());
         }
         return res;
     }
@@ -76,7 +78,7 @@ public class UserController {
         try {
             res=userDao.saveUserWithSafe(user);
         }catch (Exception e){
-            System.out.println("异常信息： "+e.getMessage());
+            log.error("异常信息： "+e.getMessage());
         }
         return res;
     }
@@ -92,7 +94,7 @@ public class UserController {
         try {
             res=userDao.saveUserWithKey(user);
         }catch (Exception e){
-            System.out.println("异常信息： "+e.getMessage());
+            log.error("异常信息： "+e.getMessage());
         }
         return res;
     }
@@ -110,7 +112,7 @@ public class UserController {
                 res=userDao.updateUser(user);
             }
         }catch (Exception e){
-            System.out.println("异常信息： "+e.getMessage());
+            log.error("异常信息： "+e.getMessage());
         }
         return res;
     }
@@ -127,7 +129,7 @@ public class UserController {
             User deleteUser=userDao.getUserById(id);
             res=userDao.deleteUser(deleteUser);
         }catch (Exception e){
-            System.out.println("异常信息： "+e.getMessage());
+            log.error("异常信息： "+e.getMessage());
         }
         return res;
     }
@@ -147,7 +149,7 @@ public class UserController {
                 res=true;
             }
         }catch (Exception e){
-            System.out.println("异常信息： "+e.getMessage());
+            log.error("异常信息： "+e.getMessage());
         }
         return res;
     }
@@ -162,7 +164,7 @@ public class UserController {
         try {
             res=userDao.getCount();
         }catch (Exception e){
-            System.out.println("异常信息： "+e.getMessage());
+            log.error("异常信息： "+e.getMessage());
         }
         return res;
     }

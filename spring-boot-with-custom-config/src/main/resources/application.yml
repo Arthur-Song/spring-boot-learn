@@ -1,0 +1,11 @@
+app:
+  name: spring-boot-with-custom-config
+  description: "自定义属性配置"
+
+author:
+  name: "Arthur Song"
+  favorite-number: ${random.int}
+  email: "arthurdev@163.com"
+  website: "http://arthursong.com"
+  github: "https://github.com/Arthur-Song"
+  greeting: "大家好，我是${author.name},如果觉得本文对您有用的话，请给个赞吧，谢谢！"

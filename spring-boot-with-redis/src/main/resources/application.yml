@@ -1,0 +1,23 @@
+spring:
+  redis:
+    database: 5
+    host: 127.0.0.1
+    # 密码，如果没有则不要写该字段
+#    password:
+    port: 6379
+    # 连接超时时间 单位 ms（毫秒）
+    timeout: 3000
+    pool:
+      # 连接池中的最大空闲连接，默认值也是8
+      max-idle: 500
+      #连接池中的最小空闲连接，默认值也是0
+      min-idle: 50
+      # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
+      max-active: 2000
+      # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException
+      max-wait: 1000
+#    sentinel:
+      # Redis服务器master的名字
+#      master: master
+      # redis-sentinel的配置地址和端口
+#      nodes: 127.0.0.1:11111,127.0.0.1:11112,127.0.0.1:11113

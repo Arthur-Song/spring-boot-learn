@@ -5,7 +5,6 @@ import com.google.common.cache.CacheBuilder;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.guava.GuavaCache;
-import org.springframework.cache.guava.GuavaCacheManager;
 import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 /**
- * guava缓存配置
+ * guava个性化key缓存配置
  * Created by Administrator on 2018/7/10.
  */
 @Configuration

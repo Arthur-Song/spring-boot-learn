@@ -2,7 +2,7 @@ spring:
   mail:
     host: smtp.163.com
     username: ${mail.from}
-    password: 1QazxsW2
+    password: ********
     default-encoding: UTF-8
 mail:
   from: arthurdev@163.com

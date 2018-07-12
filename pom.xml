@@ -27,6 +27,7 @@
 		<module>spring-boot-with-multi-environments</module>
 		<module>spring-boot-with-mybatis</module>
 		<module>spring-boot-with-redis</module>
+		<module>spring-boot-with-scheduled-task</module>
 		<module>spring-boot-with-spring-data-jpa</module>
 		<module>spring-boot-with-swagger2</module>
 	</modules>

@@ -20,6 +20,7 @@
 
 	<modules>
 		<module>spring-boot-with-custom-config</module>
+		<module>spring-boot-with-global-exception-handler</module>
 		<module>spring-boot-with-guava-cache</module>
 		<module>spring-boot-with-jdbc-template</module>
 		<module>spring-boot-with-mail</module>

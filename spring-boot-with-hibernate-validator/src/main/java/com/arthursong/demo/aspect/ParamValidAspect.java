@@ -1,7 +1,6 @@
 package com.arthursong.demo.aspect;
 
 import com.arthursong.demo.entity.dto.ResultDto;
-import com.arthursong.demo.entity.enums.ResultCodeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -9,10 +8,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by Administrator on 2018/7/18.

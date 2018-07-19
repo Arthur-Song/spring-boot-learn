@@ -1,5 +1,33 @@
 define({ "api": [
   {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "spring-boot-with-apidoc/apidoc/main.js",
+    "group": "E__workspace_blog_spring_boot_learn_spring_boot_with_apidoc_apidoc_main_js",
+    "groupTitle": "E__workspace_blog_spring_boot_learn_spring_boot_with_apidoc_apidoc_main_js",
+    "name": ""
+  },
+  {
     "type": "DELETE",
     "url": "/user/:id",
     "title": "删除用户",
@@ -37,7 +65,12 @@ define({ "api": [
       ]
     },
     "filename": "spring-boot-with-apidoc/src/main/java/com/arthursong/demo/controller/UserController.java",
-    "groupTitle": "Users"
+    "groupTitle": "Users",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/user/:id"
+      }
+    ]
   },
   {
     "type": "GET",
@@ -77,7 +110,12 @@ define({ "api": [
       ]
     },
     "filename": "spring-boot-with-apidoc/src/main/java/com/arthursong/demo/controller/UserController.java",
-    "groupTitle": "Users"
+    "groupTitle": "Users",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/user/:id"
+      }
+    ]
   },
   {
     "type": "POST",
@@ -92,17 +130,38 @@ define({ "api": [
         "Parameter": [
           {
             "group": "Parameter",
-            "type": "json",
+            "type": "String",
             "optional": false,
-            "field": "user",
-            "description": "<p>用户</p>"
+            "field": "username",
+            "description": "<p>用户名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>邮箱</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>密码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "age",
+            "description": "<p>年龄</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "请求样例：",
-          "content": "{\n    \"username\":\"arthursong\",\n    \"email\":\"arthurdev@163.com\",\n    \"password\":\"123456\",\n    \"age\":18\n}",
+          "content": "?username=arthursong&email=arthurdev@163.com&password=123456&age=18",
           "type": "json"
         }
       ]
@@ -128,7 +187,12 @@ define({ "api": [
       ]
     },
     "filename": "spring-boot-with-apidoc/src/main/java/com/arthursong/demo/controller/UserController.java",
-    "groupTitle": "Users"
+    "groupTitle": "Users",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/user"
+      }
+    ]
   },
   {
     "type": "GET",
@@ -148,6 +212,11 @@ define({ "api": [
       ]
     },
     "filename": "spring-boot-with-apidoc/src/main/java/com/arthursong/demo/controller/UserController.java",
-    "groupTitle": "Users"
+    "groupTitle": "Users",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:8080/users"
+      }
+    ]
   }
 ] });

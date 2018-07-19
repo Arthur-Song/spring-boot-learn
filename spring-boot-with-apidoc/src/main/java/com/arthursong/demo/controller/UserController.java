@@ -35,20 +35,23 @@ public class UserController {
      * @apiGroup Users
      * @apiVersion 0.0.1-SNAPSHOT
      * @apiDescription 用于保存或修改用户
-     * @apiParam {json} user 用户
+     * @apiParam {String} username 用户名
+     * @apiParam {String} email 邮箱
+     * @apiParam {String} password 密码
+     * @apiParam {Integer} age 年龄
      * @apiParamExample {json} 请求样例：
-     *  {
-     *      "username":"arthursong",
-     *      "email":"arthurdev@163.com",
-     *      "password":"123456",
-     *      "age":18
-     *  }
-     *  @apiSuccess (200) {int} 1 1:表示成功
-     *  @apiSuccessExample {json} 返回样例:
+     *  ?username=arthursong&email=arthurdev@163.com&password=123456&age=18
+     * @apiSuccess (200) {int} 1 1:表示成功
+     * @apiSuccessExample {json} 返回样例:
      *  1
      */
     @PostMapping("/user")
-    public int save(@RequestBody User user){
+    public int save(String username,String email,String password,Integer age){
+        User user = new User();
+        user.setUsername(username);
+        user.setEmail(email);
+        user.setPassword(password);
+        user.setAge(age);
         return userService.saveOrUpdate(user);
     }
 
@@ -94,4 +97,13 @@ public class UserController {
     public User getByUsernameOrEmail(String keyword){
         return userService.getByUsernameOrEmail(keyword);
     }
+
+    /**
+     * {
+     *      "username":"arthursong",
+     *      "email":"arthurdev@163.com",
+     *      "password":"123456",
+     *      "age":18
+     *  }
+     */
 }

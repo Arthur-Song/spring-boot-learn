@@ -1,5 +1,8 @@
 {
   "name": "spring-boot-with-apidoc",
   "version": "0.0.1-SNAPSHOT",
-  "description": "spring boot apidoc demo"
+  "description": "spring boot apidoc demo",
+  "title": "test APIs",
+  "url" : "http://localhost:8080",
+  "sampleUrl" : "http://localhost:8080"
 }

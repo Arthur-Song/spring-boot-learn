@@ -19,6 +19,7 @@
 	</parent>
 
 	<modules>
+		<module>spring-boot-with-apidoc</module>
 		<module>spring-boot-with-custom-config</module>
 		<module>spring-boot-with-global-exception-handler</module>
 		<module>spring-boot-with-guava-cache</module>

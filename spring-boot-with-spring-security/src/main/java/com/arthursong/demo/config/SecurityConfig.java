@@ -1,5 +1,6 @@
 package com.arthursong.demo.config;
 
+import com.arthursong.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,6 +18,9 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
+
+    @Autowired
+    private UserService userService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -39,7 +43,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 //            .withUser("arthursong") //
 //            .password("123456") //
 //            .roles("USER");
-        authenticationManagerBuilder.userDetailsService(userDetailsService());
+
+//        authenticationManagerBuilder.userDetailsService(userDetailsService());
+
+        authenticationManagerBuilder.userDetailsService(userService);
     }
 
     @Bean
